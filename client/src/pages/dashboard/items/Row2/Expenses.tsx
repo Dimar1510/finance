@@ -1,9 +1,7 @@
 import { useTheme } from "@mui/material";
-import { FC, useMemo } from "react";
+import { useMemo } from "react";
 import {
-  AreaChart,
   CartesianGrid,
-  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -31,7 +29,7 @@ const Expenses = () => {
         }
       )
     );
-  }, []);
+  }, [data]);
 
   return (
     <DashboardItem gridArea={"d"}>
