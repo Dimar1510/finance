@@ -9,7 +9,8 @@ var debug = require("debug")("server:server");
 var http = require("http");
 const mongoose = require("mongoose");
 const KPI = require("../models/KPI");
-const kpis = require("../data/mockData");
+const { kpis, products } = require("../data/mockData");
+const Product = require("../models/Product");
 
 /**
  * Get port from environment and store in Express.
@@ -30,6 +31,7 @@ var server = http.createServer(app);
 mongoose.connect(process.env.DATABASE_URL).then(async () => {
   server.listen(port, () => console.log("Server is running on port", port));
   // KPI.insertMany(kpis);
+  // Product.insertMany(products);
 });
 
 server.on("error", onError);

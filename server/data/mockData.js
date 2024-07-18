@@ -4017,4 +4017,4 @@ const transactions = [
   },
 ];
 
-(module.exports = kpis), products, transactions;
+module.exports = { kpis, products, transactions };
