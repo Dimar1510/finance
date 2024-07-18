@@ -7,6 +7,9 @@
 var app = require("../app");
 var debug = require("debug")("server:server");
 var http = require("http");
+const mongoose = require("mongoose");
+const KPI = require("../models/KPI");
+const kpis = require("../data/mockData");
 
 /**
  * Get port from environment and store in Express.
@@ -24,8 +27,11 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+mongoose.connect(process.env.DATABASE_URL).then(async () => {
+  server.listen(port, () => console.log("Server is running on port", port));
+  // KPI.insertMany(kpis);
+});
 
-server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
 
