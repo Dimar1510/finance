@@ -1,11 +1,12 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
-import Row1 from "./Row1";
 import Row2 from "./Row2";
 import Row3 from "./Row3";
 import { gridLarge, gridSmall } from "./gridTemplate";
+import RevenueExpenses from "./items/RevenueExpenses";
+import ProfitExpenses from "./items/ProfitExpenses";
+import DashboardItem from "src/components/DashboardItem/DashboardItem";
 
 const Dashboard = () => {
-  const { palette } = useTheme();
   const isLargeScreen = useMediaQuery("(min-width: 1200px)");
   return (
     <Box
@@ -27,7 +28,9 @@ const Dashboard = () => {
             }
       }
     >
-      <Row1 />
+      <RevenueExpenses />
+      <ProfitExpenses />
+      <DashboardItem gridArea={"c"}></DashboardItem>
       <Row2 />
       <Row3 />
     </Box>
