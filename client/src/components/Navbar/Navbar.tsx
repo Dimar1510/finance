@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import FlexBetween from "src/components/ui/FlexBetween";
-import { Pix } from "@mui/icons-material";
+import { AttachMoneyOutlined } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const { palette } = useTheme();
@@ -17,9 +17,9 @@ const Navbar = () => {
         }}
       >
         <FlexBetween gap={"0.75rem"}>
-          <Pix sx={{ fontSize: "28px" }} />
-          <Typography variant="h4" fontSize={"16px"}>
-            Finanseer
+          <AttachMoneyOutlined sx={{ fontSize: "28px" }} />
+          <Typography variant="h4" fontSize={"18px"}>
+            Logo
           </Typography>
         </FlexBetween>
       </NavLink>
