@@ -2,10 +2,11 @@ import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Row2 from "./Row2";
 import Row3 from "./Row3";
 import { gridLarge, gridSmall } from "./gridTemplate";
-import RevenueExpenses from "./items/RevenueExpenses";
-import ProfitExpenses from "./items/ProfitExpenses";
+import RevenueExpenses from "./items/Row1/RevenueExpenses";
+import ProfitExpenses from "./items/Row1/ProfitExpenses";
+import RevenueByMonth from "./items/Row1/RevenueByMonth";
 import DashboardItem from "src/components/DashboardItem/DashboardItem";
-import RevenueByMonth from "./items/RevenueByMonth";
+import Expenses from "./items/Row2/Expenses";
 
 const Dashboard = () => {
   const isLargeScreen = useMediaQuery("(min-width: 1200px)");
@@ -29,10 +30,16 @@ const Dashboard = () => {
             }
       }
     >
+      {/* Row 1 */}
       <RevenueExpenses />
       <ProfitExpenses />
       <RevenueByMonth />
-      <Row2 />
+
+      {/* Row 2 */}
+      <Expenses />
+      <DashboardItem gridArea={"e"}></DashboardItem>
+      <DashboardItem gridArea={"f"}></DashboardItem>
+      {/* Row 3 */}
       <Row3 />
     </Box>
   );
