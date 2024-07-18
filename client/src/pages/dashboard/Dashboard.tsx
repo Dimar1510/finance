@@ -5,6 +5,7 @@ import { gridLarge, gridSmall } from "./gridTemplate";
 import RevenueExpenses from "./items/RevenueExpenses";
 import ProfitExpenses from "./items/ProfitExpenses";
 import DashboardItem from "src/components/DashboardItem/DashboardItem";
+import RevenueByMonth from "./items/RevenueByMonth";
 
 const Dashboard = () => {
   const isLargeScreen = useMediaQuery("(min-width: 1200px)");
@@ -30,7 +31,7 @@ const Dashboard = () => {
     >
       <RevenueExpenses />
       <ProfitExpenses />
-      <DashboardItem gridArea={"c"}></DashboardItem>
+      <RevenueByMonth />
       <Row2 />
       <Row3 />
     </Box>
