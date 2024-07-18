@@ -8,6 +8,12 @@ import Dashboard from "./pages/dashboard/Dashboard";
 
 const App = () => {
   const theme = useMemo(() => createTheme(themeSettings), []);
+  // temp workaround until Recharts is fixed
+  const error = console.error;
+  console.error = (...args: any) => {
+    if (/defaultProps/.test(args[0])) return;
+    error(...args);
+  };
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>

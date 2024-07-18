@@ -8,6 +8,7 @@ import RevenueByMonth from "./items/Row1/RevenueByMonth";
 import DashboardItem from "src/components/DashboardItem/DashboardItem";
 import Expenses from "./items/Row2/Expenses";
 import Targets from "./items/Row2/Targets";
+import Prices from "./items/Row2/Prices";
 
 const Dashboard = () => {
   const isLargeScreen = useMediaQuery("(min-width: 1200px)");
@@ -39,7 +40,7 @@ const Dashboard = () => {
       {/* Row 2 */}
       <Expenses />
       <Targets />
-      <DashboardItem gridArea={"f"}></DashboardItem>
+      <Prices />
       {/* Row 3 */}
       <Row3 />
     </Box>

@@ -56,9 +56,7 @@ const Targets = () => {
           <Typography mt={"0.4rem"} variant="h5">
             Рентабельность
           </Typography>
-          <Typography variant="h6">
-            Рентабельность в этом месяце выше на 30%
-          </Typography>
+          <Typography variant="h6">Рентабельность выше на 30%</Typography>
         </Box>
       </FlexBetween>
     </DashboardItem>

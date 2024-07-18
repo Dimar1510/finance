@@ -16,7 +16,17 @@ const ItemHeader: FC<Props> = ({ icon, title, subtitle, text }) => {
       <FlexBetween>
         {icon}
         <Box width={"100%"}>
-          <Typography variant="h4" mb={"-0.1rem"}>
+          <Typography
+            variant="h4"
+            mb={"-0.1rem"}
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              display: "-webkit-box",
+              WebkitLineClamp: "1",
+              WebkitBoxOrient: "vertical",
+            }}
+          >
             {title}
           </Typography>
           <Typography variant="h6">{subtitle}</Typography>
