@@ -22,11 +22,6 @@ const Dashboard = () => {
 
   if (products) console.log("products:", products);
 
-  const sum = products?.reduce((acc, obj) => {
-    return acc + obj.expense;
-  }, 0);
-
-  if (sum) console.log(sum);
   const isLargeScreen = useMediaQuery("(min-width: 1200px)");
   return (
     <Box

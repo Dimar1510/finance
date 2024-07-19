@@ -3,27 +3,27 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Product {
-  id           Int           @id @default(autoincrement())
+ id          String    @id @default(auto()) @map("_id") @db.ObjectId
   price        Int
   expense      Int
   date         String
   name         String
   transactions Transaction[]
-  createdAt    DateTime      @default(now())
+  createdAt   DateTime  @default(now())
 }
 
 model Transaction {
-  id        Int      @id @default(autoincrement())
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
   buyer     String
   date      String
-  product   Product  @relation(fields: [productId], references: [id])
-  productId Int
-  createdAt DateTime @default(now())
+  product   Product @relation(fields: [productId], references: [id])
+  productId String @db.ObjectId
+  createdAt   DateTime  @default(now())
 }
 
 // model User {

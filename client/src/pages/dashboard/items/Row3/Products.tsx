@@ -3,7 +3,7 @@ import { DataGrid, GridCellParams } from "@mui/x-data-grid";
 import { useGetProductsQuery } from "src/app/services/api";
 import DashboardItem from "src/components/DashboardItem/DashboardItem";
 import ItemHeader from "src/components/ItemHeader/ItemHeader";
-
+import { format } from "date-fns";
 const Products = () => {
   const { data } = useGetProductsQuery();
   const { palette } = useTheme();
@@ -21,7 +21,13 @@ const Products = () => {
     },
     {
       field: "date",
-      headerName: "Дата",
+      headerName: "Месяц",
+      renderCell: (params: GridCellParams) =>
+        `${parseInt(
+          format(new Date(params.value as string), "MMM", {
+            useAdditionalDayOfYearTokens: true,
+          })
+        )}`,
       flex: 2,
     },
     {
@@ -29,7 +35,6 @@ const Products = () => {
       headerName: "Расходы, руб",
       flex: 2,
       renderCell: (params: GridCellParams) => `${params.value}`,
-      editable: true,
     },
     {
       field: "price",
