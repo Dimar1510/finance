@@ -34,10 +34,7 @@ const Prices = () => {
 
   return (
     <DashboardItem gridArea={"f"}>
-      <ItemHeader
-        title="Операционные и внереализационные расходы"
-        text="+4%"
-      ></ItemHeader>
+      <ItemHeader title="Затраты на реализацию" text="+4%"></ItemHeader>
       <ResponsiveContainer width="100%" height={"100%"}>
         <ScatterChart
           margin={{
