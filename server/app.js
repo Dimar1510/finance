@@ -5,10 +5,8 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
+
 const cors = require("cors");
-const kpiRoutes = require("./routes/kpi");
-const productRoutes = require("./routes/product");
-const transactionRoutes = require("./routes/transaction.js");
 require("dotenv").config();
 const app = express();
 
@@ -22,9 +20,7 @@ app.use(cors());
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/kpi", kpiRoutes);
-app.use("/product", productRoutes);
-app.use("/transaction", transactionRoutes);
+app.use("/api", require("./routes"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

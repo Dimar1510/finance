@@ -11,24 +11,18 @@ export const api = createApi({
   baseQuery,
   reducerPath: "main",
   tagTypes: ["kpis", "products", "transactions"],
+
   endpoints: (build) => ({
-    getKpis: build.query<GetKpisResponse[], void>({
-      query: () => ({
-        url: "kpi/kpis",
-        method: "GET",
-      }),
-      providesTags: ["kpis"],
-    }),
     getProducts: build.query<GetProductsResponse[], void>({
       query: () => ({
-        url: "product/products",
+        url: "/products",
         method: "GET",
       }),
       providesTags: ["products"],
     }),
     getTransactions: build.query<GetTransactionsResponse[], void>({
       query: () => ({
-        url: "transaction/transactions",
+        url: "/transactions",
         method: "GET",
       }),
       providesTags: ["transactions"],
@@ -36,5 +30,4 @@ export const api = createApi({
   }),
 });
 
-export const { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } =
-  api;
+export const { useGetProductsQuery, useGetTransactionsQuery } = api;

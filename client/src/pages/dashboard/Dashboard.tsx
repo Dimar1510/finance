@@ -11,8 +11,22 @@ import Products from "./items/Row3/Products";
 import Transactions from "./items/Row3/Transactions";
 import ExpensesByCategory from "./items/Row3/ExpensesByCategory";
 import Overall from "./items/Row3/Overall";
+import {
+  useGetProductsQuery,
+  useGetTransactionsQuery,
+} from "src/app/services/api";
 
 const Dashboard = () => {
+  const { data: products } = useGetProductsQuery();
+  const { data: transactions } = useGetTransactionsQuery();
+
+  if (products) console.log("products:", products);
+
+  const sum = products?.reduce((acc, obj) => {
+    return acc + obj.expense;
+  }, 0);
+
+  if (sum) console.log(sum);
   const isLargeScreen = useMediaQuery("(min-width: 1200px)");
   return (
     <Box
@@ -34,7 +48,7 @@ const Dashboard = () => {
             }
       }
     >
-      <RevenueExpenses />
+      {/* <RevenueExpenses />
       <ProfitExpenses />
       <RevenueByMonth />
 
@@ -45,7 +59,9 @@ const Dashboard = () => {
       <Products />
       <Transactions />
       <ExpensesByCategory />
-      <Overall />
+      <Overall /> */}
+
+      <Products />
     </Box>
   );
 };

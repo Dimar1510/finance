@@ -10,26 +10,36 @@ const Products = () => {
 
   const productColumns = [
     {
-      field: "_id",
+      field: "id",
       headerName: "id",
       flex: 1,
     },
     {
+      field: "name",
+      headerName: "Название",
+      flex: 2,
+    },
+    {
+      field: "date",
+      headerName: "Дата",
+      flex: 2,
+    },
+    {
       field: "expense",
-      headerName: "Расходы",
-      flex: 0.5,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
+      headerName: "Расходы, руб",
+      flex: 2,
+      renderCell: (params: GridCellParams) => `${params.value}`,
       editable: true,
     },
     {
       field: "price",
-      headerName: "Стоимость",
-      flex: 0.5,
-      renderCell: (params: GridCellParams) => `$${params.value}`,
+      headerName: "Стоимость, руб",
+      flex: 2,
+      renderCell: (params: GridCellParams) => `${params.value}`,
     },
   ];
   return (
-    <DashboardItem gridArea={"g"}>
+    <DashboardItem gridArea={"a"}>
       <ItemHeader
         title="Список товаров"
         text={data?.length + " products"}
