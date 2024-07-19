@@ -42,6 +42,30 @@ export const tokens = {
 };
 
 export const themeSettings = {
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: ${tokens.grey[900]};
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${tokens.primary[500]};
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${tokens.secondary[500]},
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: ${tokens.grey[800]};
+    border-radius: 8px;
+  }
+`,
+    },
+  },
   palette: {
     primary: {
       ...tokens.primary,

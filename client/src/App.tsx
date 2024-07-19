@@ -14,6 +14,7 @@ const App = () => {
     if (/defaultProps/.test(args[0])) return;
     error(...args);
   };
+
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>

@@ -8,7 +8,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const kpiRoutes = require("./routes/kpi");
 const productRoutes = require("./routes/product");
-
+const transactionRoutes = require("./routes/transaction.js");
 require("dotenv").config();
 const app = express();
 
@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/kpi", kpiRoutes);
 app.use("/product", productRoutes);
+app.use("/transaction", transactionRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
