@@ -64,16 +64,12 @@ const KPISchema = new Schema(
       currency: "USD",
       get: (v) => v / 100,
     },
-    expenseByCategory: {
+    expensesByCategory: {
       type: Map,
       of: {
         type: mongoose.Types.Currency,
         currency: "USD",
-        of: {
-          type: mongoose.Types.Currency,
-          currency: "USD",
-          get: (v) => v / 100,
-        },
+        get: (v) => v / 100,
       },
     },
     monthlyData: [monthSchema],

@@ -1,16 +1,12 @@
 import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridCellParams } from "@mui/x-data-grid";
-import {
-  useGetProductsQuery,
-  useGetTransactionsQuery,
-} from "src/app/services/api";
+import { useGetTransactionsQuery } from "src/app/services/api";
 import DashboardItem from "src/components/DashboardItem/DashboardItem";
 import ItemHeader from "src/components/ItemHeader/ItemHeader";
 
 const Transactions = () => {
   const { data } = useGetTransactionsQuery();
   const { palette } = useTheme();
-  console.log(data);
   const transactionColumns = [
     {
       field: "_id",
