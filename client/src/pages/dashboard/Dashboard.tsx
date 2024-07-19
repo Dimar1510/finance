@@ -34,17 +34,14 @@ const Dashboard = () => {
             }
       }
     >
-      {/* Row 1 */}
       <RevenueExpenses />
       <ProfitExpenses />
       <RevenueByMonth />
 
-      {/* Row 2 */}
       <Expenses />
       <Targets />
       <Prices />
 
-      {/* Row 3 */}
       <Products />
       <Transactions />
       <ExpensesByCategory />
