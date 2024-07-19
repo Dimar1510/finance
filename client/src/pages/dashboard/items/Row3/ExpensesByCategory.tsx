@@ -1,8 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { useMemo } from "react";
-import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { Cell, Pie, PieChart } from "recharts";
 import { useGetKpisQuery } from "src/app/services/api";
-import { GetKpisResponse } from "src/app/types";
 import DashboardItem from "src/components/DashboardItem/DashboardItem";
 import ItemHeader from "src/components/ItemHeader/ItemHeader";
 import FlexBetween from "src/components/ui/FlexBetween";
@@ -11,7 +10,6 @@ const ExpensesByCategory = () => {
   const { palette } = useTheme();
   const pieColors = [palette.primary[800], palette.primary[300]];
   const { data: kpisData } = useGetKpisQuery();
-  console.log(kpisData);
   const chartData = useMemo(() => {
     if (kpisData) {
       const totalExpenses = kpisData[0].totalExpenses;
